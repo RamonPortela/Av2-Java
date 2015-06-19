@@ -18,7 +18,7 @@ public class MetodoPrincipal {
 		
 		Viagem viagem = new Viagem();
 		MetodosAuxiliares.leViagem(viagem);
-		String duracaoViagem = viagem.getDuracaoViagem();
+		int duracaoViagem = viagem.getDuracaoViagem();
 		String destinoViagem = viagem.getDestinoViagem();
 		String origemViagem = viagem.getOrigemViagem();
 		String dataViagem = viagem.getDataViagem();

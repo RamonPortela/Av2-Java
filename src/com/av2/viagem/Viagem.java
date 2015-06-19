@@ -2,17 +2,17 @@ package com.av2.viagem;
 
 public class Viagem {
 	
-	private String duracaoViagem;
+	private int duracaoViagem;
 	private String destinoViagem;
 	private String origemViagem;
 	private String dataViagem;
 	private String horaViagem;
 
 	
-	public String getDuracaoViagem() {
+	public int getDuracaoViagem() {
 		return duracaoViagem;
 	}
-	public void setDuracaoViagem(String duracaoViagem) {
+	public void setDuracaoViagem(int duracaoViagem) {
 		this.duracaoViagem = duracaoViagem;
 	}
 	public String getDestinoViagem() {

@@ -1,4 +1,6 @@
-+===================================================================+
-| Nome:RAMON PORTELA SANTOS                    	 Cpf:4324123432141234321 |
-| Classe:null       	 Numero do Assento:0  	 Numero do Vagão:0  |
- Data da Viagem:null 	 Origem:null 	 Destino:null 	 Duração da Viagem:null 	 Hora da Viagem:null
++====================================================================+
+| Nome:fdsafdsafsadfsadfsadfdsfsadfsfdsafdsafa 	 Cpf:123.456.789-10  |
+| Classe:null       	 Numero do Assento:0  	 Numero do Vagão:0   |
+| Data da Viagem:null       	Hora da Viagem:null 	Duração:0 hr |
+| Origem:null                	Destino:null                         |
++====================================================================+

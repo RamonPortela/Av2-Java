@@ -29,19 +29,23 @@ public class CreateFile {
 		Viagem registroDaViagem = new Viagem();	
 		
 		MetodosAuxiliares.leViajante(registroDoViajante);
-		//MetodosAuxiliares.leViagem(registroDaViagem);
-		//MetodosAuxiliares.leBilhete(registroDoBilhete);
+		MetodosAuxiliares.leBilhete(registroDoBilhete);
+		MetodosAuxiliares.leViagem(registroDaViagem);
 		
 		
-		output.format("+===================================================================+\n"
-				+ "| Nome:%-39s \t Cpf:%-14s |\n| Classe:%-10s \t Numero do Assento:%-2d \t Numero do Vagão:%-2d |\n Data da Viagem:%s \t Origem:%s \t Destino:%s \t Duração da Viagem:%s \t Hora da Viagem:%s",
+		output.format("+====================================================================+%n"
+				+ "| Nome:%-39s \t Cpf:%-14s  |"
+				+ "%n| Classe:%-10s \t Numero do Assento:%-2d \t Numero do Vagão:%-2d  |"
+				+ "%n| Data da Viagem:%-10s \tHora da Viagem:%-5s\tDuração:%-2shr |"
+				+ "%n| Origem:%-20s\tDestino:%-20s         |"
+				+ "%n+====================================================================+",
 				registroDoViajante.getNomeCompletoViajante(), registroDoViajante.getCpfViajante(),
 				registroDoBilhete.getClasseAssento(), registroDoBilhete.getNumeroAssento(),
 				registroDoBilhete.getNumeroVagao(),	registroDaViagem.getDataViagem(),
-				registroDaViagem.getOrigemViagem(),	registroDaViagem.getDestinoViagem(),
-				registroDaViagem.getDuracaoViagem(), registroDaViagem.getHoraViagem());
+				registroDaViagem.getHoraViagem(), registroDaViagem.getDuracaoViagem(),
+				registroDaViagem.getOrigemViagem(),	registroDaViagem.getDestinoViagem());
 		
-		}
+	}
 	
 	// Fecha o Arquivo
 	public void closedFile(){		
