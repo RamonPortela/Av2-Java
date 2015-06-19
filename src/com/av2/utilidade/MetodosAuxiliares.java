@@ -31,8 +31,16 @@ public class MetodosAuxiliares {
 	}
 	
 	public static void leBilhete(Bilhete bilhete){
-		System.out.println("Entre com a classe do assento: ");
-		bilhete.setClasseAssento(scan.nextLine());
+		String classeAssento;
+		do{
+			System.out.println("Entre com a classe do assento(primeira, executiva ou normal): ");
+			classeAssento = scan.nextLine();	
+			if((!classeAssento.equals("primeira")) && (!classeAssento.equals("executiva")) && (!classeAssento.equals("normal"))){
+				System.out.println("Opcao inválida, digite uma opção valida.");
+			}			
+		}while((!classeAssento.equals("primeira")) && (!classeAssento.equals("executiva")) && (!classeAssento.equals("normal")));
+		
+		bilhete.setClasseAssento(classeAssento);
 		System.out.println("Entre com o numero do vagao: ");
 		bilhete.setNumeroVagao(scan.nextInt());
 		System.out.println("Entre com o numero do assento:");
