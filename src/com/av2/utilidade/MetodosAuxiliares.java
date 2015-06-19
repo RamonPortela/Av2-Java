@@ -36,6 +36,6 @@ public class MetodosAuxiliares {
 		System.out.println("Entre com o numero do vagao: ");
 		bilhete.setNumeroVagao(scan.nextInt());
 		System.out.println("Entre com o numero do assento:");
-		bilhete.setNumeroVagao(scan.nextInt());
+		bilhete.setNumeroAssento(scan.nextInt());
 	}
 }
