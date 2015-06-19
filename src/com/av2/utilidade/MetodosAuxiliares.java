@@ -36,9 +36,12 @@ public class MetodosAuxiliares {
 	public static void leViagem(Viagem viagem){
 		boolean confirmaData = false;
 		boolean confirmaHora = false;
+		int horaDuracao;
+		String destinoViagem;
+		String origemViagem;
 		String dataViagem;
 		String horaViagem;
-		int horaDuracao;
+
 		
 		do{
 			System.out.println("Entre com o tempo de duração da viagem em horas: ");
@@ -52,10 +55,24 @@ public class MetodosAuxiliares {
 		viagem.setDuracaoViagem(horaDuracao);
 		
 		scan.nextLine();
-		System.out.println("Entre com o local de destino da viagem: ");
-		viagem.setDestinoViagem(scan.nextLine());
-		System.out.println("Entre com o local de origem da viagem: ");
-		viagem.setOrigemViagem(scan.nextLine());
+		
+		do{
+			System.out.println("Entre com o local de destino da viagem: ");
+			destinoViagem = scan.nextLine();	
+			if(destinoViagem.length() > 20){
+				System.out.println("O nome do destino da viagem não pode exceder 20 caracteres.");
+			}
+		}while(destinoViagem.length() > 20);
+		viagem.setDestinoViagem(destinoViagem);
+		
+		do{
+			System.out.println("Entre com o local de origem da viagem: ");
+			origemViagem = scan.nextLine();
+			if(origemViagem.length() > 20){
+				System.out.println("O nome da origem da viagem não pode exceder 20 caracteres.");
+			}
+		}while(origemViagem.length() > 20);
+		viagem.setOrigemViagem(origemViagem);
 		
 		do{
 			System.out.println("Entre com a data da viagem: ");
