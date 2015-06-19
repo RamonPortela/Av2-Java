@@ -5,13 +5,15 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import com.av2.bilhete.Bilhete;
+import com.av2.viagem.Viagem;
 import com.av2.viajante.Viajante;
 
 public class ReadText {
 	
 	private Scanner input;
-	Bilhete registrodoBilhete = new Bilhete();
-	Viajante registrodoViajante = new Viajante();
+	Bilhete registroDoBilhete = new Bilhete();
+	Viajante registroDoViajante = new Viajante();
+	Viagem registroDaViagem = new Viagem();
 	
 	public void openFile(){	
 		
@@ -27,19 +29,30 @@ public class ReadText {
 	public void lerBilhete(){
 		
 		while (input.hasNext()){
-			registrodoViajante.setNomeCompletoViajante(input.next());
-			registrodoViajante.setCpfViajante(input.next());
+			registroDoViajante.setNomeCompletoViajante(input.next());
+			registroDoViajante.setCpfViajante(input.next());
+			
+			registroDoBilhete.setClasseAssento(input.next());
+			registroDoBilhete.setNumeroAssento(input.nextInt());
+			registroDoBilhete.setNumeroVagao(input.nextInt());
+			
+			registroDaViagem.setDataViagem(input.next());
+			registroDaViagem.setOrigemViagem(input.next());
+			registroDaViagem.setDestinoViagem(input.next());
+			registroDaViagem.setDuracaoViagem(input.next());
+			registroDaViagem.setHoraViagem(input.next());				
 		}
-
-		
-		/*registrodoBilhete.getClasseAssento();
-		registrodoBilhete.getNumeroAssento();
-		registrodoBilhete.getNumeroVagao();*/
 	}
 	
 	public void imprimirBilhete(){	
 			
-		System.out.printf("Nome:%s \t Cpf:%s", registrodoViajante.getNomeCompletoViajante(), registrodoViajante.getCpfViajante() ,registrodoBilhete.getClasseAssento(), registrodoBilhete.getNumeroAssento(), registrodoBilhete.getNumeroVagao());
+		System.out.printf("Nome:%s \t Cpf:%s \n Classe:%s \t Numero do Assento:%d \t Numero do Vagão:%d \n"
+				+ "Data da Viagem:%s \t Origem:%s \t Destino:%s \t Duração da Viagem:%s \t Hora da Viagem:%s",
+				registroDoViajante.getNomeCompletoViajante(), registroDoViajante.getCpfViajante(),
+				registroDoBilhete.getClasseAssento(), registroDoBilhete.getNumeroAssento(),
+				registroDoBilhete.getNumeroVagao(),	registroDaViagem.getDataViagem(),
+				registroDaViagem.getOrigemViagem(),	registroDaViagem.getDestinoViagem(),
+				registroDaViagem.getDuracaoViagem(), registroDaViagem.getHoraViagem());
 		
 	}
 	
