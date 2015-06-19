@@ -28,11 +28,12 @@ public class ReadText {
 	
 	public void lerBilhete(){
 		
-		while (input.hasNext()){
+		while (input.hasNextLine()){
+			Scanner in = new Scanner(input.nextLine());
 			registroDoViajante.setNomeCompletoViajante(input.next());
 			registroDoViajante.setCpfViajante(input.next());
 			
-			registroDoBilhete.setClasseAssento(input.next());
+/*			registroDoBilhete.setClasseAssento(input.next());
 			registroDoBilhete.setNumeroAssento(input.nextInt());
 			registroDoBilhete.setNumeroVagao(input.nextInt());
 			
@@ -40,19 +41,19 @@ public class ReadText {
 			registroDaViagem.setOrigemViagem(input.next());
 			registroDaViagem.setDestinoViagem(input.next());
 			registroDaViagem.setDuracaoViagem(input.next());
-			registroDaViagem.setHoraViagem(input.next());				
+			registroDaViagem.setHoraViagem(input.next());*/				
 		}
 	}
 	
-	public void imprimirBilhete(){	
-			
-		System.out.printf("Nome:%s \t Cpf:%s \n Classe:%s \t Numero do Assento:%d \t Numero do Vagão:%d \n"
-				+ "Data da Viagem:%s \t Origem:%s \t Destino:%s \t Duração da Viagem:%s \t Hora da Viagem:%s",
-				registroDoViajante.getNomeCompletoViajante(), registroDoViajante.getCpfViajante(),
+	public void mostrarBilhete(){	
+		/*\n Classe:%s \t Numero do Assento:%d \t Numero do Vagão:%d \n"
+				+ "Data da Viagem:%s \t Origem:%s \t Destino:%s \t Duração da Viagem:%s \t Hora da Viagem:%s	
+*/		System.out.printf("Nome:%s \t Cpf:%s ",
+				registroDoViajante.getNomeCompletoViajante(), registroDoViajante.getCpfViajante()/*,
 				registroDoBilhete.getClasseAssento(), registroDoBilhete.getNumeroAssento(),
 				registroDoBilhete.getNumeroVagao(),	registroDaViagem.getDataViagem(),
 				registroDaViagem.getOrigemViagem(),	registroDaViagem.getDestinoViagem(),
-				registroDaViagem.getDuracaoViagem(), registroDaViagem.getHoraViagem());
+				registroDaViagem.getDuracaoViagem(), registroDaViagem.getHoraViagem()*/);
 		
 	}
 	

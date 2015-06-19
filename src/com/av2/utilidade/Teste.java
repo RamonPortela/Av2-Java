@@ -8,7 +8,7 @@ public class Teste {
 		
 		teste.openFile();
 		teste.lerBilhete();
-		teste.imprimirBilhete();
+		teste.mostrarBilhete();
 		teste.closedFile();
 	}
 

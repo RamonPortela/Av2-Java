@@ -7,7 +7,7 @@ public class Create {
 		CreateFile teste = new CreateFile();
 		
 		teste.openFile();
-		teste.addRegistro();
+		teste.imprimirBilhete();
 		teste.closedFile();
 	}
 

@@ -22,18 +22,19 @@ public class CreateFile {
 	}
 	
 	// Adiciona o registro em um Arquivo
-	public void addRegistro(){
+	public void imprimirBilhete(){
 		
 		Bilhete registroDoBilhete = new Bilhete();
 		Viajante registroDoViajante = new Viajante();
 		Viagem registroDaViagem = new Viagem();	
 		
 		MetodosAuxiliares.leViajante(registroDoViajante);
-		MetodosAuxiliares.leViagem(registroDaViagem);
-		MetodosAuxiliares.leBilhete(registroDoBilhete);
+		//MetodosAuxiliares.leViagem(registroDaViagem);
+		//MetodosAuxiliares.leBilhete(registroDoBilhete);
 		
 		
-		output.format("Nome:%s \t Cpf:%s \n Classe:%s \t Numero do Assento:%d \t Numero do Vagão:%d \n Data da Viagem:%s \t Origem:%s \t Destino:%s \t Duração da Viagem:%s \t Hora da Viagem:%s",
+		output.format("+===================================================================+\n"
+				+ "| Nome:%-39s \t Cpf:%-14s |\n| Classe:%-10s \t Numero do Assento:%-2d \t Numero do Vagão:%-2d |\n Data da Viagem:%s \t Origem:%s \t Destino:%s \t Duração da Viagem:%s \t Hora da Viagem:%s",
 				registroDoViajante.getNomeCompletoViajante(), registroDoViajante.getCpfViajante(),
 				registroDoBilhete.getClasseAssento(), registroDoBilhete.getNumeroAssento(),
 				registroDoBilhete.getNumeroVagao(),	registroDaViagem.getDataViagem(),
