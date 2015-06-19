@@ -10,7 +10,6 @@ import com.av2.viajante.Viajante;
 public class ReadText {
 	
 	private Scanner input;
-	
 	Bilhete registrodoBilhete = new Bilhete();
 	Viajante registrodoViajante = new Viajante();
 	
@@ -25,25 +24,22 @@ public class ReadText {
 		}
 	}
 	
-	public void lerBilhete(){	
+	public void lerBilhete(){
 		
-		CreateFile registros = new CreateFile();
+		while (input.hasNext()){
+			registrodoViajante.setNomeCompletoViajante(input.next());
+			registrodoViajante.setCpfViajante(input.next());
+		}
+
 		
-		registros.addRegistro();
-		
-		
-		
-		registrodoViajante.getCpfViajante();
-		registrodoViajante.getNomeCompletoViajante();
-		
-		registrodoBilhete.getClasseAssento();
+		/*registrodoBilhete.getClasseAssento();
 		registrodoBilhete.getNumeroAssento();
-		registrodoBilhete.getNumeroVagao();
+		registrodoBilhete.getNumeroVagao();*/
 	}
 	
 	public void imprimirBilhete(){	
 			
-		System.out.printf("\n" + registrodoViajante.getNomeCompletoViajante(), registrodoViajante.getCpfViajante() ,registrodoBilhete.getClasseAssento(), registrodoBilhete.getNumeroAssento(), registrodoBilhete.getNumeroVagao());
+		System.out.printf("Nome:%s \t Cpf:%s", registrodoViajante.getNomeCompletoViajante(), registrodoViajante.getCpfViajante() ,registrodoBilhete.getClasseAssento(), registrodoBilhete.getNumeroAssento(), registrodoBilhete.getNumeroVagao());
 		
 	}
 	

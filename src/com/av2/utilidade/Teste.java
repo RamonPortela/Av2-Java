@@ -7,8 +7,8 @@ public class Teste {
 		ReadText teste = new ReadText();
 		
 		teste.openFile();
-		teste.imprimirBilhete();
 		teste.lerBilhete();
+		teste.imprimirBilhete();
 		teste.closedFile();
 	}
 

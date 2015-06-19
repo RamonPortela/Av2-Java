@@ -29,11 +29,11 @@ public class CreateFile {
 		Viagem registroDaViagem = new Viagem();	
 		
 		MetodosAuxiliares.leViajante(registroDoViajante);
-		MetodosAuxiliares.leBilhete(registroDoBilhete);
-		MetodosAuxiliares.leViagem(registroDaViagem);
+		//MetodosAuxiliares.leViagem(registroDaViagem);
+		//MetodosAuxiliares.leBilhete(registroDoBilhete);
 		
-		registroDoViajante.getCpfViajante();
-		registroDoViajante.getNomeCompletoViajante();
+		
+		output.format("Nome: %s Cpf: %s", registroDoViajante.getNomeCompletoViajante(), registroDoViajante.getCpfViajante());
 		
 		registroDaViagem.getDataViagem();
 		registroDaViagem.getDestinoViagem();
