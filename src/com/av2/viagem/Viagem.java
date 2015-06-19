@@ -7,6 +7,7 @@ public class Viagem {
 	private String origemViagem;
 	private String dataViagem;
 	private String horaViagem;
+
 	
 	public String getDuracaoViagem() {
 		return duracaoViagem;
