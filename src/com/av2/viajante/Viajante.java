@@ -1,6 +1,6 @@
-package com.av2.passageiro;
+package com.av2.viajante;
 
-public class Passageiro {
+public class Viajante {
 	
 	private String nomeCompletoViajante;
 	private String cpfViajante;
