@@ -10,11 +10,13 @@ import com.av2.viajante.Viajante;
 
 public class ReadText {
 	
+	//variaveis privadas pois só serão acessadas a partir desta classe
 	private Scanner input;
-	Bilhete registroDoBilhete = new Bilhete();
-	Viajante registroDoViajante = new Viajante();
-	Viagem registroDaViagem = new Viagem();
+	private Bilhete registroDoBilhete = new Bilhete();
+	private Viajante registroDoViajante = new Viajante();
+	private Viagem registroDaViagem = new Viagem();
 	
+	//abre o arquivo txt
 	public void openFile(){	
 		
 		try {
@@ -26,6 +28,7 @@ public class ReadText {
 		}
 	}
 	
+	//Lê as linhas do arquivo txt e salva as informações nas suas respectivas variáveis
 	public void lerBilhete(){
 		
 		while (input.hasNext()){
@@ -40,8 +43,9 @@ public class ReadText {
 			
 			String nomeFormatado = "";
 			
-			for(int contador = 0; contador < nomeSeparado.length; contador++){
-				nomeFormatado = nomeFormatado.concat(nomeSeparado[contador]);
+			//junta as strings do nome que estavam separadas
+			for(int contadorLetrasNome = 0; contadorLetrasNome < nomeSeparado.length; contadorLetrasNome++){
+				nomeFormatado = nomeFormatado.concat(nomeSeparado[contadorLetrasNome]);
 				nomeFormatado += " ";				
 			}
 			registroDoViajante.setNomeCompletoViajante(nomeFormatado);	
@@ -60,13 +64,18 @@ public class ReadText {
 			String[] terceiraLinha = input.nextLine().split("\t");
 			String[] dataViagem = terceiraLinha[0].split(":");
 			String[] dataViagemFormatada = dataViagem[1].split(" ");			
-			String[] horaViagem = terceiraLinha[1].split(":");
-			String[] horaViagemFormatada = horaViagem[1].split(" ");
+			String[] horarioViagem = terceiraLinha[1].split(":");
+			String horaViagem = horarioViagem[1];
+			String minutoViagem = horarioViagem[2];
 			String[] duracaoViagem = terceiraLinha[2].split(":");
 			String[] duracaoViagemFormatada = duracaoViagem[1].split(" ");
 			registroDaViagem.setDataViagem(dataViagemFormatada[0]);
-			registroDaViagem.setHoraViagem(horaViagemFormatada[0]);
 			registroDaViagem.setDuracaoViagem(Integer.parseInt(duracaoViagemFormatada[0]));
+			
+			//junta as strings da hora e minuto
+			String horaViagemFormatada = horaViagem+":"+minutoViagem;
+			
+			registroDaViagem.setHoraViagem(horaViagemFormatada);
 			
 			String[] quartaLinha = input.nextLine().split("\t");
 			String[] origemViagem = quartaLinha[0].split(":");
@@ -76,16 +85,18 @@ public class ReadText {
 			
 			String origemFormatado = "";
 			
-			for(int contador = 0; contador < origemSeparado.length; contador++){
-				origemFormatado = origemFormatado.concat(origemSeparado[contador]);
+			//junta as strings do nome do estado
+			for(int contadorLetrasOrigem = 0; contadorLetrasOrigem < origemSeparado.length; contadorLetrasOrigem++){
+				origemFormatado = origemFormatado.concat(origemSeparado[contadorLetrasOrigem]);
 				origemFormatado += " "; 
 			}
 			registroDaViagem.setOrigemViagem(origemFormatado);
 			
 			String destinoViagemFormatado = "";
 			
-			for(int contador = 0; contador < (destinoViagemSeparado.length-1); contador++){
-				destinoViagemFormatado = destinoViagemFormatado.concat(destinoViagemSeparado[contador]);
+			//junta as strings do nome do estado
+			for(int contadorLetrasDestino = 0; contadorLetrasDestino < (destinoViagemSeparado.length-1); contadorLetrasDestino++){
+				destinoViagemFormatado = destinoViagemFormatado.concat(destinoViagemSeparado[contadorLetrasDestino]);
 				destinoViagemFormatado += " "; 
 			}
 			registroDaViagem.setDestinoViagem(destinoViagemFormatado);
@@ -94,15 +105,18 @@ public class ReadText {
 		}
 	}
 	
+	// Exibe no console os dados lidos do arquivo txt
 	public void mostrarBilhete(){	
 		
-			System.out.printf("Nome:%s \t Cpf:%s \nClasse:%s\t Numero do Assento:%d\t Numero do Vagão:%d \nData da Viagem:%s \t Duração da Viagem:%s \t Hora da Viagem:%s \nOrigem:%s \t Destino:%s",
-				registroDoViajante.getNomeCompletoViajante(), registroDoViajante.getCpfViajante(),
-				registroDoBilhete.getClasseAssento(), registroDoBilhete.getNumeroAssento(),
-				registroDoBilhete.getNumeroVagao(),	registroDaViagem.getDataViagem(),
-				registroDaViagem.getDuracaoViagem(), registroDaViagem.getHoraViagem(),
-				registroDaViagem.getOrigemViagem(),	registroDaViagem.getDestinoViagem());
-		
+			System.out.printf("Nome: %s \t Cpf: %s \n"
+								+ "Classe: %s\t Numero do Assento: %d\t Numero do Vagão: %d \n"
+								+ "Data da Viagem: %s \t Duração da Viagem: %s Horas \t Hora da Viagem: %s \n"
+								+ "Origem: %s \t Destino: %s",
+								registroDoViajante.getNomeCompletoViajante(), registroDoViajante.getCpfViajante(),
+								registroDoBilhete.getClasseAssento(), registroDoBilhete.getNumeroAssento(),
+								registroDoBilhete.getNumeroVagao(),	registroDaViagem.getDataViagem(),
+								registroDaViagem.getDuracaoViagem(), registroDaViagem.getHoraViagem(),
+								registroDaViagem.getOrigemViagem(),	registroDaViagem.getDestinoViagem());		
 	}
 	
 	// Fecha o Arquivo

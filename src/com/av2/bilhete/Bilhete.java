@@ -2,10 +2,12 @@ package com.av2.bilhete;
 
 public class Bilhete {
 	
+	//variáveis privadas pois só poderão ser vistas por esta classe
 	private int numeroVagao;
 	private int numeroAssento;
 	private String classeAssento;
 	
+	//métodos publicos para pode manipular as variaveis em outra classe
 	public int getNumeroVagao() {
 		return numeroVagao;
 	}

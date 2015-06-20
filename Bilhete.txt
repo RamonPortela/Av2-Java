@@ -1,6 +1,0 @@
-+====================================================================+
-| Nome:ramon portela santos                    	 Cpf:123.456.789-10  |
-| Classe:primeira   	 Numero do Assento:10 	 Numero do Vagão:5   |
-| Data da Viagem:10/05/2015 	Hora da Viagem:10:45	Duração:5 hr |
-| Origem:são paulo           	Destino:rio de janeiro               |
-+====================================================================+

@@ -8,12 +8,16 @@ import com.av2.viajante.Viajante;
 
 public class MetodosAuxiliares {
 	
-	static Scanner scan = new Scanner(System.in);
+	//variavel privada pois só precisa ser vista dentro desta classe
+	private static Scanner scan = new Scanner(System.in);
 	
+	/*método estático para que não seja preciso instanciar a classe onde o método for chamado, 
+	e público para pdoer ser visto por outras classes*/
 	public static void leViajante(Viajante viajante){
 		String cpf;
 		String nome;
 		
+		//faz a checagem das informações que serão inseridas para que o txt não fiquei fora do formato definido
 		do{
 			System.out.println("Entre com o nome completo do viajante: ");
 			nome = scan.nextLine();		
@@ -33,6 +37,8 @@ public class MetodosAuxiliares {
 		viajante.setCpfViajante(cpf);
 	}
 	
+	/*método estático para que não seja preciso instanciar a classe onde o método for chamado, 
+	e público para pdoer ser visto por outras classes*/
 	public static void leViagem(Viagem viagem){
 		boolean confirmaData = false;
 		boolean confirmaHora = false;
@@ -42,7 +48,7 @@ public class MetodosAuxiliares {
 		String dataViagem;
 		String horaViagem;
 
-		
+		//faz a checagem das informações que serão inseridas para que o txt não fiquei fora do formato definido
 		do{
 			System.out.println("Entre com o tempo de duração da viagem em horas: ");
 			horaDuracao = scan.nextInt();
@@ -93,11 +99,14 @@ public class MetodosAuxiliares {
 		viagem.setHoraViagem(horaViagem);
 	}
 	
+	/*método estático para que não seja preciso instanciar a classe onde o método for chamado, 
+	e público para pdoer ser visto por outras classes*/	
 	public static void leBilhete(Bilhete bilhete){
 		String classeAssento;
 		int numeroVagao;
 		int numeroAssento;
 		
+		//faz a checagem das informações que serão inseridas para que o txt não fiquei fora do formato definido
 		do{
 			System.out.println("Entre com a classe do assento(primeira, executiva ou normal): ");
 			classeAssento = scan.nextLine();	
@@ -126,6 +135,8 @@ public class MetodosAuxiliares {
 		bilhete.setNumeroAssento(numeroAssento);
 	}
 	
+	/*método privadado pois só será visto dentro dessa classe
+	se certifica que a data está no formato correto para que o arquivo txt continue formatado*/
 	private static boolean checaData(String data){
 		int contadorBarra = 0;
 		int dia;
@@ -162,6 +173,8 @@ public class MetodosAuxiliares {
 		return true;
 	}
 	
+	/*método privadado pois só será visto dentro dessa classe
+	se certifica que a hora está no formato correto para que o arquivo txt continue formatado*/
 	private static boolean checaHora(String horario){
 		int contadorDivisao = 0;
 		int hora;
@@ -188,6 +201,7 @@ public class MetodosAuxiliares {
 		}
 		else{
 			System.out.println("Horario inválido. O horario deve estar no formato: HH:MM");
+			return false;
 		}
 		return true;
 	}

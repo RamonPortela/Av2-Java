@@ -11,7 +11,7 @@ public class CreateFile {
 	
 	private Formatter output; // Objeto utilizado para gerar o arquivo de texto
 	
-	// Cria um arquivo
+	// Cria ou abre um arquivo
 	public void openFile(){		
 		try {
 			output = new Formatter("Bilhete.txt");
@@ -21,7 +21,7 @@ public class CreateFile {
 		}	
 	}
 	
-	// Adiciona o registro em um Arquivo
+	// Reescreve as informações no arquivo
 	public void imprimirBilhete(){
 		
 		Bilhete registroDoBilhete = new Bilhete();
@@ -33,12 +33,12 @@ public class CreateFile {
 		MetodosAuxiliares.leViagem(registroDaViagem);
 		
 		
-		output.format("+====================================================================+%n"
-				+ "| Nome:%-39s \t Cpf:%-14s  |"
-				+ "%n| Classe:%-10s \t Numero do Assento:%-2d \t Numero do Vagão:%-2d  |"
-				+ "%n| Data da Viagem:%-10s \tHora da Viagem:%-5s\tDuração:%-2shr |"
-				+ "%n| Origem:%-20s\tDestino:%-20s         |"
-				+ "%n+====================================================================+",
+		output.format("+=====================================================================+%n"
+				+ "| Nome:%-39s \t Cpf:%-14s   |"
+				+ "%n| Classe:%-10s \t Numero do Assento:%-2d \t Numero do Vagão:%-2d   |"
+				+ "%n| Data da Viagem:%-10s \tHora da Viagem:%-5s\tDuração:%-2s hr |"
+				+ "%n| Origem:%-20s\tDestino:%-20s          |"
+				+ "%n+=====================================================================+",
 				registroDoViajante.getNomeCompletoViajante(), registroDoViajante.getCpfViajante(),
 				registroDoBilhete.getClasseAssento(), registroDoBilhete.getNumeroAssento(),
 				registroDoBilhete.getNumeroVagao(),	registroDaViagem.getDataViagem(),

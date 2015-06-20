@@ -1,37 +1,26 @@
 package com.av2.main;
 
-import com.av2.bilhete.Bilhete;
-import com.av2.utilidade.MetodosAuxiliares;
-import com.av2.viagem.Viagem;
-import com.av2.viajante.Viajante;
+import com.av2.utilidade.CreateFile;
+import com.av2.utilidade.ReadText;
 
 public class MetodoPrincipal {
 
 	public static void main(String[] args) {
 		
-		//cria um passageiro
-		Viajante viajante = new Viajante();
-		MetodosAuxiliares.leViajante(viajante);
+		//cria um objeto de escrita em arquivo
+		CreateFile bilheteEscrever = new CreateFile();
 		
-		String nome = viajante.getNomeCompletoViajante();
-		String cpf = viajante.getCpfViajante();
+		bilheteEscrever.openFile();
+		bilheteEscrever.imprimirBilhete();
+		bilheteEscrever.closedFile();
+		System.out.println("Imprimindo bilhete...\n");
 		
-		Viagem viagem = new Viagem();
-		MetodosAuxiliares.leViagem(viagem);
-		int duracaoViagem = viagem.getDuracaoViagem();
-		String destinoViagem = viagem.getDestinoViagem();
-		String origemViagem = viagem.getOrigemViagem();
-		String dataViagem = viagem.getDataViagem();
-		String horaViagem = viagem.getHoraViagem();
+		//cria um objeto de leitura de arquivo
+		ReadText bilheteLer = new ReadText();
 		
-		Bilhete bilhete = new Bilhete();
-		MetodosAuxiliares.leBilhete(bilhete);
-		int numeroVagao = bilhete.getNumeroVagao();
-		int numeroAssento = bilhete.getNumeroAssento();
-		String classeAssento = bilhete.getClasseAssento();
-		
-		System.out.println("Cliente: "+nome+" Cpf: "+ cpf);
-		System.out.println("Duracação da viagem: "+duracaoViagem+" Destino da viagem: "+destinoViagem+" Origem da viagem: "+origemViagem+"\n "+" Data da viagem: "+dataViagem+" Hora da viagem: "+horaViagem);
-		System.out.println("Numero do vagão: "+numeroVagao+" Numero de assento: "+ numeroAssento + " Classe do assento: "+ classeAssento);
+		bilheteLer.openFile();
+		bilheteLer.lerBilhete();
+		bilheteLer.mostrarBilhete();
+		bilheteLer.closedFile();
 	}
 }

@@ -1,10 +1,12 @@
 package com.av2.viajante;
 
 public class Viajante {
-	
+
+	//variáveis privadas pois só poderão ser vistas por esta classe
 	private String nomeCompletoViajante;
 	private String cpfViajante;
 	
+	//métodos publicos para pode manipular as variaveis em outra classe	
 	public String getNomeCompletoViajante() {
 		return nomeCompletoViajante;
 	}

@@ -1,14 +1,15 @@
 package com.av2.viagem;
 
 public class Viagem {
-	
+
+	//variáveis privadas pois só poderão ser vistas por esta classe
 	private int duracaoViagem;
 	private String destinoViagem;
 	private String origemViagem;
 	private String dataViagem;
 	private String horaViagem;
 
-	
+	//métodos publicos para pode manipular as variaveis em outra classe	
 	public int getDuracaoViagem() {
 		return duracaoViagem;
 	}
