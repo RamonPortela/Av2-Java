@@ -2,7 +2,6 @@ package colaborador;
 import enums.Cargos;
 import enums.Departamentos;
 import enums.Requisicoes;
-import javafx.scene.shape.ArcType;
 import requisicao.Requisicao;
 
 public class Colaborador {
@@ -131,7 +130,7 @@ public class Colaborador {
 			break;
 
 		default:
-			
+
 			break;
 		}
 
