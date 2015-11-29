@@ -1,19 +1,13 @@
-package executavel;
-import colaborador.Colaborador;
-import departamento.Departamento;
-import enums.Cargos;
-import enums.Departamentos;
-import enums.Requisicoes;
-import requisicao.Requisicao;
+package com.av2.executavel;
+import com.av2.colaborador.Colaborador;
+import com.av2.enums.Cargos;
+import com.av2.enums.Departamentos;
+import com.av2.enums.Requisicoes;
+import com.av2.requisicao.Requisicao;
 
-public class teste {
+public class Executavel {
 
 	public static void main(String[] args) {
-
-		Departamento juridico = new Departamento(Departamentos.JURIDICO);
-		Departamento ti = new Departamento(Departamentos.TI);
-		Departamento rh = new Departamento(Departamentos.RH);
-		Departamento operacao = new Departamento(Departamentos.OPERACOES);
 
 		Colaborador colaboradorJuridico = new Colaborador(Cargos.ANALISTA, Departamentos.JURIDICO);
 		Colaborador colaboradorTI = new Colaborador(Cargos.ANALISTA, Departamentos.TI);

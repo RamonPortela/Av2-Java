@@ -1,11 +1,11 @@
-package fabrica;
+package com.av2.fabrica;
 
 import java.util.ArrayList;
 
-import requisicao.Requisicao;
-import colaborador.Colaborador;
-import enums.Cargos;
-import enums.Departamentos;
+import com.av2.colaborador.Colaborador;
+import com.av2.enums.Cargos;
+import com.av2.enums.Departamentos;
+import com.av2.requisicao.Requisicao;
 
 public class FabricaDeChain {
 

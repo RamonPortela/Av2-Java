@@ -1,10 +1,10 @@
-package colaborador;
+package com.av2.colaborador;
 
-import enums.Cargos;
-import enums.Departamentos;
-import enums.Requisicoes;
-import fabrica.FabricaDeChain;
-import requisicao.Requisicao;
+import com.av2.enums.Cargos;
+import com.av2.enums.Departamentos;
+import com.av2.enums.Requisicoes;
+import com.av2.fabrica.FabricaDeChain;
+import com.av2.requisicao.Requisicao;
 
 public class Colaborador {
 	private Cargos cargo;

@@ -1,5 +1,5 @@
-package departamento;
-import enums.Departamentos;
+package com.av2.departamento;
+import com.av2.enums.Departamentos;
 
 public class Departamento {
 	private Departamentos departamento;

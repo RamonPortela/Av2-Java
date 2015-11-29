@@ -1,6 +1,7 @@
-package requisicao;
-import enums.Departamentos;
-import enums.Requisicoes;
+package com.av2.requisicao;
+
+import com.av2.enums.Departamentos;
+import com.av2.enums.Requisicoes;
 
 public class Requisicao {
 	private Requisicoes requisicao;
