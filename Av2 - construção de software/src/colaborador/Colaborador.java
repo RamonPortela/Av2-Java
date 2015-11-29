@@ -3,6 +3,7 @@ package colaborador;
 import enums.Cargos;
 import enums.Departamentos;
 import enums.Requisicoes;
+import fabrica.FabricaDeChain;
 import requisicao.Requisicao;
 
 public class Colaborador {
@@ -49,6 +50,7 @@ public class Colaborador {
 				if (requisicao.getRequisicao() == Requisicoes.AQUISICAO	&& requisicao.getValor() <= 5000) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);;
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
