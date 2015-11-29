@@ -13,12 +13,13 @@ public class teste {
 
 		System.out.println(d.getOrcamento());
 
-		Colaborador c = new Colaborador(Cargos.CEO, Departamentos.CEO);
+		Colaborador c = new Colaborador(Cargos.ANALISTA, Departamentos.OPERACOES);
 
 		System.out.println(c.toString());
 
-		Requisicao r = new Requisicao(Requisicoes.AQUISICAO, Departamentos.RH, 100000000);
+		Requisicao r = new Requisicao(Requisicoes.ACORDOLEGAL, Departamentos.RH, 41);
 
+		
 		c.aceitaRequisicao(r);
 
 	}

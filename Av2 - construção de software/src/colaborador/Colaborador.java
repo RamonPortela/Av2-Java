@@ -1,4 +1,5 @@
 package colaborador;
+
 import enums.Cargos;
 import enums.Departamentos;
 import enums.Requisicoes;
@@ -9,7 +10,7 @@ public class Colaborador {
 	private Departamentos departamento;
 	private Colaborador proximo;
 
-	public Colaborador(Cargos _cargo, Departamentos _departamento){
+	public Colaborador(Cargos _cargo, Departamentos _departamento) {
 		this.setCargo(_cargo);
 		this.setDepartamento(_departamento);
 		this.setProximo(null);
@@ -39,51 +40,146 @@ public class Colaborador {
 		this.cargo = _cargo;
 	}
 
-	public void aceitaRequisicao(Requisicao requisicao){
+	public void aceitaRequisicao(Requisicao requisicao) {
 
 		switch (departamento) {
 		case TI:
-			switch(cargo){
-				case ANALISTA:
-					if(requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 5000){
-						System.out.println("Requisição aceita pelo "+ this.toString());
-					}
-					else{
-						this.getProximo().aceitaRequisicao(requisicao);
-					}
+			switch (cargo) {
+			case ANALISTA:
+				if (requisicao.getRequisicao() == Requisicoes.AQUISICAO	&& requisicao.getValor() <= 5000) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
 				break;
 
-				case SUPERVISOR:
-					if(requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 100000){
-						System.out.println("Requisição aceita pelo "+ this.toString());
-					}
-					else{
-						this.getProximo().aceitaRequisicao(requisicao);
-					}
+			case SUPERVISOR:
+				if (requisicao.getRequisicao() == Requisicoes.AQUISICAO	&& requisicao.getValor() <= 100000) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
 				break;
 
-				case GERENTE:
-					if(requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 200000){
-						System.out.println("Requisição aceita pelo "+ this.toString());
-					}
-					else{
-						this.getProximo().aceitaRequisicao(requisicao);
-					}
+			case GERENTE:
+				if (requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 200000) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
 				break;
 
-				case DIRETOR:
-					if(requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 1000000){
-						System.out.println("Requisição aceita pelo "+ this.toString());
-					}
-					else{
-						this.getProximo().aceitaRequisicao(requisicao);
-					}
+			case DIRETOR:
+				if (requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 1000000) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
 				break;
 			}
 			break;
 
+		case RH:
+			switch (cargo) {
+			case ANALISTA:
+				if (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 15000) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
+				break;
+
+			case SUPERVISOR:
+				if (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 80000) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
+				break;
+
+			case GERENTE:
+				if (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 400000) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
+				break;
+
+			case DIRETOR:
+				if (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 2000000) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
+				break;
+			}
+			break;
+
+		case JURIDICO:
+			switch (cargo) {
+			case ANALISTA:
+				if (requisicao.getRequisicao() == Requisicoes.ACORDOLEGAL && requisicao.getValor() <= 50000) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
+				break;
+
+			case GERENTE:
+				if (requisicao.getRequisicao() == Requisicoes.ACORDOLEGAL && requisicao.getValor() <= 250000) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
+				break;
+
+			case DIRETOR:
+				if ((requisicao.getRequisicao() == Requisicoes.ACORDOLEGAL && requisicao.getValor() <= 5000000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 500000)) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
+				break;
+			}
+			break;
+
+		case OPERACOES:
+			switch (cargo) {
+			case ANALISTA:
+				if ((requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 50000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 25000)) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
+				break;
+
+			case SUPERVISOR:
+				if ((requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 250000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 100000)) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
+				break;
+
+			case GERENTE:
+				if ((requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 1000000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 500000)) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
+				break;
+
+			case DIRETOR:
+				if ((requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 5000000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 5000000)) {
+					System.out.println("Requisição aceita pelo " + this.toString());
+				} else {
+					this.getProximo().aceitaRequisicao(requisicao);
+				}
+				break;
+			}
+			break;
 		default:
-			System.out.println("Requisição aceita pelo "+ this.toString());
+			System.out.println("Requisição aceita pelo " + this.toString());
 			break;
 		}
 
