@@ -8,7 +8,7 @@ import enums.Cargos;
 import enums.Departamentos;
 
 public class FabricaDeChain {
-	
+
 	private static final int ANALISTA_TI = 0;
 	private static final int SUPERVISOR_TI = 1;
 	private static final int GERENTE_TI = 2;
@@ -50,7 +50,7 @@ public class FabricaDeChain {
 		colaboradores.add(GERENTE_TI, gerenteTI);
 		Colaborador diretorTI = new Colaborador(Cargos.DIRETOR, Departamentos.TI);
 		colaboradores.add(DIRETOR_TI, diretorTI);
-		
+
 		Colaborador analistaRH = new Colaborador(Cargos.ANALISTA, Departamentos.RH);
 		colaboradores.add(ANALISTA_RH, analistaRH);
 		Colaborador supervisorRH = new Colaborador(Cargos.SUPERVISOR, Departamentos.RH);
@@ -59,7 +59,7 @@ public class FabricaDeChain {
 		colaboradores.add(GERENTE_RH, gerenteRH);
 		Colaborador diretorRH = new Colaborador(Cargos.DIRETOR, Departamentos.RH);
 		colaboradores.add(DIRETOR_RH, diretorRH);
-		
+
 		Colaborador analistaOperacao = new Colaborador(Cargos.ANALISTA, Departamentos.OPERACOES);
 		colaboradores.add(ANALISTA_OPERACOES, analistaOperacao);
 		Colaborador supervisorOperacao = new Colaborador(Cargos.SUPERVISOR, Departamentos.OPERACOES);
@@ -68,7 +68,7 @@ public class FabricaDeChain {
 		colaboradores.add(GERENTE_OPERACOES, gerenteOperacao);
 		Colaborador diretorOperacoes = new Colaborador(Cargos.DIRETOR, Departamentos.OPERACOES);
 		colaboradores.add(DIRETOR_OPERACOES, diretorOperacoes);
-		
+
 		Colaborador analistaJuridico = new Colaborador(Cargos.ANALISTA, Departamentos.JURIDICO);
 		colaboradores.add(ANALISTA_JURIDICO, analistaJuridico);
 		Colaborador gerenteJuridico = new Colaborador(Cargos.GERENTE, Departamentos.JURIDICO);
@@ -81,125 +81,125 @@ public class FabricaDeChain {
 	}
 
 	public void criaChain(Requisicao requisicao, Colaborador colaborador){
-		
+
 		switch(colaborador.getDepartamento()){
 		case TI:
 			switch(requisicao.getRequisicao()){
-			case AQUISICAO:
-				colaborador.setProximo(colaboradores.get(ANALISTA_TI));
-				colaboradores.get(ANALISTA_TI).setProximo(colaboradores.get(SUPERVISOR_TI));
-				colaboradores.get(SUPERVISOR_TI).setProximo(colaboradores.get(GERENTE_TI));
-				colaboradores.get(GERENTE_TI).setProximo(colaboradores.get(DIRETOR_TI));
-				colaboradores.get(DIRETOR_TI).setProximo(colaboradores.get(CEO));
-				break;
-				
-			case ACORDOLEGAL:
-				System.out.println("Requisição transferida do setor: " + requisicao.getDepartamento() + " para o setor: " + Departamentos.JURIDICO);
-				colaborador.setProximo(colaboradores.get(ANALISTA_JURIDICO));
-				colaboradores.get(ANALISTA_JURIDICO).setProximo(colaboradores.get(GERENTE_JURIDICO));
-				colaboradores.get(GERENTE_JURIDICO).setProximo(colaboradores.get(DIRETOR_JURIDICO));
-				colaboradores.get(DIRETOR_JURIDICO).setProximo(colaboradores.get(CEO));
-				break;
-				
-			case CONTRATACAO:
-				System.out.println("Requisição transferida do setor: " + requisicao.getDepartamento() + " para o setor: " + Departamentos.RH);
-				colaborador.setProximo(colaboradores.get(ANALISTA_RH));
-				colaboradores.get(ANALISTA_RH).setProximo(colaboradores.get(SUPERVISOR_RH));
-				colaboradores.get(SUPERVISOR_RH).setProximo(colaboradores.get(GERENTE_RH));
-				colaboradores.get(GERENTE_RH).setProximo(colaboradores.get(DIRETOR_RH));
-				colaboradores.get(DIRETOR_RH).setProximo(colaboradores.get(CEO));
-				break;
+				case AQUISICAO:
+					colaborador.setProximo(colaboradores.get(ANALISTA_TI));
+					colaboradores.get(ANALISTA_TI).setProximo(colaboradores.get(SUPERVISOR_TI));
+					colaboradores.get(SUPERVISOR_TI).setProximo(colaboradores.get(GERENTE_TI));
+					colaboradores.get(GERENTE_TI).setProximo(colaboradores.get(DIRETOR_TI));
+					colaboradores.get(DIRETOR_TI).setProximo(colaboradores.get(CEO));
+					break;
+
+				case ACORDO_LEGAL:
+					System.out.println("Requisição transferida do setor: " + requisicao.getDepartamento() + " para o setor: " + Departamentos.JURIDICO);
+					colaborador.setProximo(colaboradores.get(ANALISTA_JURIDICO));
+					colaboradores.get(ANALISTA_JURIDICO).setProximo(colaboradores.get(GERENTE_JURIDICO));
+					colaboradores.get(GERENTE_JURIDICO).setProximo(colaboradores.get(DIRETOR_JURIDICO));
+					colaboradores.get(DIRETOR_JURIDICO).setProximo(colaboradores.get(CEO));
+					break;
+
+				case CONTRATACAO:
+					System.out.println("Requisição transferida do setor: " + requisicao.getDepartamento() + " para o setor: " + Departamentos.RH);
+					colaborador.setProximo(colaboradores.get(ANALISTA_RH));
+					colaboradores.get(ANALISTA_RH).setProximo(colaboradores.get(SUPERVISOR_RH));
+					colaboradores.get(SUPERVISOR_RH).setProximo(colaboradores.get(GERENTE_RH));
+					colaboradores.get(GERENTE_RH).setProximo(colaboradores.get(DIRETOR_RH));
+					colaboradores.get(DIRETOR_RH).setProximo(colaboradores.get(CEO));
+					break;
 			}
 			break;
-			
+
 		case RH:
 			switch(requisicao.getRequisicao()){
-			case AQUISICAO:
-				System.out.println("Requisição transferida do setor: " + requisicao.getDepartamento() + " para o setor: " + Departamentos.OPERACOES);
-				colaborador.setProximo(colaboradores.get(ANALISTA_OPERACOES));
-				colaboradores.get(ANALISTA_OPERACOES).setProximo(colaboradores.get(SUPERVISOR_OPERACOES));
-				colaboradores.get(SUPERVISOR_OPERACOES).setProximo(colaboradores.get(GERENTE_OPERACOES));
-				colaboradores.get(GERENTE_OPERACOES).setProximo(colaboradores.get(DIRETOR_OPERACOES));
-				colaboradores.get(DIRETOR_OPERACOES).setProximo(colaboradores.get(CEO));
-				break;
-				
-			case ACORDOLEGAL:
-				System.out.println("Requisição transferida do setor: " + requisicao.getDepartamento() + " para o setor: " + Departamentos.JURIDICO);
-				colaborador.setProximo(colaboradores.get(ANALISTA_JURIDICO));
-				colaboradores.get(ANALISTA_JURIDICO).setProximo(colaboradores.get(GERENTE_JURIDICO));
-				colaboradores.get(GERENTE_JURIDICO).setProximo(colaboradores.get(DIRETOR_JURIDICO));
-				colaboradores.get(DIRETOR_JURIDICO).setProximo(colaboradores.get(CEO));
-				break;
-				
-			case CONTRATACAO:
-				colaborador.setProximo(colaboradores.get(ANALISTA_RH));
-				colaboradores.get(ANALISTA_RH).setProximo(colaboradores.get(SUPERVISOR_RH));
-				colaboradores.get(SUPERVISOR_RH).setProximo(colaboradores.get(GERENTE_RH));
-				colaboradores.get(GERENTE_RH).setProximo(colaboradores.get(DIRETOR_RH));
-				colaboradores.get(DIRETOR_RH).setProximo(colaboradores.get(CEO));
-				break;
+				case AQUISICAO:
+					System.out.println("Requisição transferida do setor: " + requisicao.getDepartamento() + " para o setor: " + Departamentos.OPERACOES);
+					colaborador.setProximo(colaboradores.get(ANALISTA_OPERACOES));
+					colaboradores.get(ANALISTA_OPERACOES).setProximo(colaboradores.get(SUPERVISOR_OPERACOES));
+					colaboradores.get(SUPERVISOR_OPERACOES).setProximo(colaboradores.get(GERENTE_OPERACOES));
+					colaboradores.get(GERENTE_OPERACOES).setProximo(colaboradores.get(DIRETOR_OPERACOES));
+					colaboradores.get(DIRETOR_OPERACOES).setProximo(colaboradores.get(CEO));
+					break;
+
+				case ACORDO_LEGAL:
+					System.out.println("Requisição transferida do setor: " + requisicao.getDepartamento() + " para o setor: " + Departamentos.JURIDICO);
+					colaborador.setProximo(colaboradores.get(ANALISTA_JURIDICO));
+					colaboradores.get(ANALISTA_JURIDICO).setProximo(colaboradores.get(GERENTE_JURIDICO));
+					colaboradores.get(GERENTE_JURIDICO).setProximo(colaboradores.get(DIRETOR_JURIDICO));
+					colaboradores.get(DIRETOR_JURIDICO).setProximo(colaboradores.get(CEO));
+					break;
+
+				case CONTRATACAO:
+					colaborador.setProximo(colaboradores.get(ANALISTA_RH));
+					colaboradores.get(ANALISTA_RH).setProximo(colaboradores.get(SUPERVISOR_RH));
+					colaboradores.get(SUPERVISOR_RH).setProximo(colaboradores.get(GERENTE_RH));
+					colaboradores.get(GERENTE_RH).setProximo(colaboradores.get(DIRETOR_RH));
+					colaboradores.get(DIRETOR_RH).setProximo(colaboradores.get(CEO));
+					break;
 			}
 			break;
-			
+
 		case OPERACOES:
 			switch(requisicao.getRequisicao()){
-			case AQUISICAO:
-				colaborador.setProximo(colaboradores.get(ANALISTA_OPERACOES));
-				colaboradores.get(ANALISTA_OPERACOES).setProximo(colaboradores.get(SUPERVISOR_OPERACOES));
-				colaboradores.get(SUPERVISOR_OPERACOES).setProximo(colaboradores.get(GERENTE_OPERACOES));
-				colaboradores.get(GERENTE_OPERACOES).setProximo(colaboradores.get(DIRETOR_OPERACOES));
-				colaboradores.get(DIRETOR_OPERACOES).setProximo(colaboradores.get(CEO));
-				break;
-				
-			case ACORDOLEGAL:
-				System.out.println("Requisição transferida do setor: " + requisicao.getDepartamento() + " para o setor: " + Departamentos.JURIDICO);
-				colaborador.setProximo(colaboradores.get(ANALISTA_JURIDICO));
-				colaboradores.get(ANALISTA_JURIDICO).setProximo(colaboradores.get(GERENTE_JURIDICO));
-				colaboradores.get(GERENTE_JURIDICO).setProximo(colaboradores.get(DIRETOR_JURIDICO));
-				colaboradores.get(DIRETOR_JURIDICO).setProximo(colaboradores.get(CEO));
-				break;
-				
-			case CONTRATACAO:
-				colaborador.setProximo(colaboradores.get(ANALISTA_OPERACOES));
-				colaboradores.get(ANALISTA_OPERACOES).setProximo(colaboradores.get(SUPERVISOR_OPERACOES));
-				colaboradores.get(SUPERVISOR_OPERACOES).setProximo(colaboradores.get(GERENTE_OPERACOES));
-				colaboradores.get(GERENTE_OPERACOES).setProximo(colaboradores.get(DIRETOR_OPERACOES));
-				colaboradores.get(DIRETOR_OPERACOES).setProximo(colaboradores.get(CEO));
-				break;
+				case AQUISICAO:
+					colaborador.setProximo(colaboradores.get(ANALISTA_OPERACOES));
+					colaboradores.get(ANALISTA_OPERACOES).setProximo(colaboradores.get(SUPERVISOR_OPERACOES));
+					colaboradores.get(SUPERVISOR_OPERACOES).setProximo(colaboradores.get(GERENTE_OPERACOES));
+					colaboradores.get(GERENTE_OPERACOES).setProximo(colaboradores.get(DIRETOR_OPERACOES));
+					colaboradores.get(DIRETOR_OPERACOES).setProximo(colaboradores.get(CEO));
+					break;
+
+				case ACORDO_LEGAL:
+					System.out.println("Requisição transferida do setor: " + requisicao.getDepartamento() + " para o setor: " + Departamentos.JURIDICO);
+					colaborador.setProximo(colaboradores.get(ANALISTA_JURIDICO));
+					colaboradores.get(ANALISTA_JURIDICO).setProximo(colaboradores.get(GERENTE_JURIDICO));
+					colaboradores.get(GERENTE_JURIDICO).setProximo(colaboradores.get(DIRETOR_JURIDICO));
+					colaboradores.get(DIRETOR_JURIDICO).setProximo(colaboradores.get(CEO));
+					break;
+
+				case CONTRATACAO:
+					colaborador.setProximo(colaboradores.get(ANALISTA_OPERACOES));
+					colaboradores.get(ANALISTA_OPERACOES).setProximo(colaboradores.get(SUPERVISOR_OPERACOES));
+					colaboradores.get(SUPERVISOR_OPERACOES).setProximo(colaboradores.get(GERENTE_OPERACOES));
+					colaboradores.get(GERENTE_OPERACOES).setProximo(colaboradores.get(DIRETOR_OPERACOES));
+					colaboradores.get(DIRETOR_OPERACOES).setProximo(colaboradores.get(CEO));
+					break;
 			}
 			break;
-			
+
 		case JURIDICO:
 			switch(requisicao.getRequisicao()){
-			case AQUISICAO:
-				System.out.println("Requisição transferida do setor: " + requisicao.getDepartamento() + " para o setor: " + Departamentos.JURIDICO);
-				colaborador.setProximo(colaboradores.get(ANALISTA_TI));
-				colaboradores.get(ANALISTA_TI).setProximo(colaboradores.get(SUPERVISOR_TI));
-				colaboradores.get(SUPERVISOR_TI).setProximo(colaboradores.get(GERENTE_TI));
-				colaboradores.get(GERENTE_TI).setProximo(colaboradores.get(DIRETOR_TI));
-				colaboradores.get(DIRETOR_TI).setProximo(colaboradores.get(CEO));
-				break;
-				
-			case ACORDOLEGAL:
-				colaborador.setProximo(colaboradores.get(ANALISTA_JURIDICO));
-				colaboradores.get(ANALISTA_JURIDICO).setProximo(colaboradores.get(GERENTE_JURIDICO));
-				colaboradores.get(GERENTE_JURIDICO).setProximo(colaboradores.get(DIRETOR_JURIDICO));
-				colaboradores.get(DIRETOR_JURIDICO).setProximo(colaboradores.get(CEO));
-				break;
-				
-			case CONTRATACAO:
-				colaborador.setProximo(colaboradores.get(ANALISTA_JURIDICO));
-				colaboradores.get(ANALISTA_JURIDICO).setProximo(colaboradores.get(GERENTE_JURIDICO));
-				colaboradores.get(GERENTE_JURIDICO).setProximo(colaboradores.get(DIRETOR_JURIDICO));
-				colaboradores.get(DIRETOR_JURIDICO).setProximo(colaboradores.get(ANALISTA_RH));
-				colaboradores.get(ANALISTA_RH).setProximo(colaboradores.get(SUPERVISOR_RH));
-				colaboradores.get(SUPERVISOR_RH).setProximo(colaboradores.get(GERENTE_RH));
-				colaboradores.get(GERENTE_RH).setProximo(colaboradores.get(DIRETOR_RH));
-				colaboradores.get(DIRETOR_RH).setProximo(colaboradores.get(CEO));
-				break;
+				case AQUISICAO:
+					System.out.println("Requisição transferida do setor: " + requisicao.getDepartamento() + " para o setor: " + Departamentos.OPERACOES);
+					colaborador.setProximo(colaboradores.get(ANALISTA_OPERACOES));
+					colaboradores.get(ANALISTA_OPERACOES).setProximo(colaboradores.get(SUPERVISOR_OPERACOES));
+					colaboradores.get(SUPERVISOR_OPERACOES).setProximo(colaboradores.get(GERENTE_OPERACOES));
+					colaboradores.get(GERENTE_OPERACOES).setProximo(colaboradores.get(DIRETOR_OPERACOES));
+					colaboradores.get(DIRETOR_OPERACOES).setProximo(colaboradores.get(CEO));
+					break;
+
+				case ACORDO_LEGAL:
+					colaborador.setProximo(colaboradores.get(ANALISTA_JURIDICO));
+					colaboradores.get(ANALISTA_JURIDICO).setProximo(colaboradores.get(GERENTE_JURIDICO));
+					colaboradores.get(GERENTE_JURIDICO).setProximo(colaboradores.get(DIRETOR_JURIDICO));
+					colaboradores.get(DIRETOR_JURIDICO).setProximo(colaboradores.get(CEO));
+					break;
+
+				case CONTRATACAO:
+					colaborador.setProximo(colaboradores.get(ANALISTA_JURIDICO));
+					colaboradores.get(ANALISTA_JURIDICO).setProximo(colaboradores.get(GERENTE_JURIDICO));
+					colaboradores.get(GERENTE_JURIDICO).setProximo(colaboradores.get(DIRETOR_JURIDICO));
+					colaboradores.get(DIRETOR_JURIDICO).setProximo(colaboradores.get(ANALISTA_RH));
+					colaboradores.get(ANALISTA_RH).setProximo(colaboradores.get(SUPERVISOR_RH));
+					colaboradores.get(SUPERVISOR_RH).setProximo(colaboradores.get(GERENTE_RH));
+					colaboradores.get(GERENTE_RH).setProximo(colaboradores.get(DIRETOR_RH));
+					colaboradores.get(DIRETOR_RH).setProximo(colaboradores.get(CEO));
+					break;
 			}
 			break;
-			
+
 		default:
 			break;
 		}

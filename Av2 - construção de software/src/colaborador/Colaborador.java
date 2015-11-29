@@ -48,7 +48,7 @@ public class Colaborador {
 			switch (cargo) {
 			case ANALISTA:
 				if (requisicao.getRequisicao() == Requisicoes.AQUISICAO	&& requisicao.getValor() <= 5000) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
 					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
@@ -57,27 +57,25 @@ public class Colaborador {
 
 			case SUPERVISOR:
 				if (requisicao.getRequisicao() == Requisicoes.AQUISICAO	&& requisicao.getValor() <= 100000) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
-					FabricaDeChain.getInstance().criaChain(requisicao, this);
+
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
 
 			case GERENTE:
 				if (requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 200000) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
-					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
 
 			case DIRETOR:
 				if (requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 1000000) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
-					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -88,7 +86,7 @@ public class Colaborador {
 			switch (cargo) {
 			case ANALISTA:
 				if (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 15000) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
 					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
@@ -97,27 +95,24 @@ public class Colaborador {
 
 			case SUPERVISOR:
 				if (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 80000) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
-					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
 
 			case GERENTE:
 				if (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 400000) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
-					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
 
 			case DIRETOR:
 				if (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 2000000) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
-					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -127,8 +122,8 @@ public class Colaborador {
 		case JURIDICO:
 			switch (cargo) {
 			case ANALISTA:
-				if (requisicao.getRequisicao() == Requisicoes.ACORDOLEGAL && requisicao.getValor() <= 50000) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+				if (requisicao.getRequisicao() == Requisicoes.ACORDO_LEGAL && requisicao.getValor() <= 50000) {
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
 					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
@@ -136,19 +131,17 @@ public class Colaborador {
 				break;
 
 			case GERENTE:
-				if (requisicao.getRequisicao() == Requisicoes.ACORDOLEGAL && requisicao.getValor() <= 250000) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+				if (requisicao.getRequisicao() == Requisicoes.ACORDO_LEGAL && requisicao.getValor() <= 250000) {
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
-					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
 
 			case DIRETOR:
-				if ((requisicao.getRequisicao() == Requisicoes.ACORDOLEGAL && requisicao.getValor() <= 5000000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 500000)) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+				if ((requisicao.getRequisicao() == Requisicoes.ACORDO_LEGAL && requisicao.getValor() <= 5000000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 500000)) {
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
-					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -159,7 +152,7 @@ public class Colaborador {
 			switch (cargo) {
 			case ANALISTA:
 				if ((requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 50000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 25000)) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
 					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
@@ -168,34 +161,31 @@ public class Colaborador {
 
 			case SUPERVISOR:
 				if ((requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 250000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 100000)) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
-					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
 
 			case GERENTE:
 				if ((requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 1000000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 500000)) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
-					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
 
 			case DIRETOR:
 				if ((requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 5000000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 5000000)) {
-					System.out.println("Requisição aceita pelo " + this.toString());
+					System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 				} else {
-					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
 			}
 			break;
 		default:
-			System.out.println("Requisição aceita pelo " + this.toString());
+			System.out.println("Requisição aceita pelo " + this.toString()+"\n");
 			break;
 		}
 
@@ -206,44 +196,60 @@ public class Colaborador {
 
 		String _cargo = "";
 
-		switch (cargo) {
-		case ANALISTA:
-			_cargo = _cargo + "Analista do setor de: ";
-			break;
-		case SUPERVISOR:
-			_cargo = _cargo + "Supervisor do setor de: ";
-			break;
-		case GERENTE:
-			_cargo = _cargo + "Gerente do setor de: ";
-			break;
+		if(this.getCargo() != Cargos.DIRETOR){
+			switch (cargo) {
+			case ANALISTA:
+				_cargo = _cargo + "Analista do setor de: ";
+				break;
+			case SUPERVISOR:
+				_cargo = _cargo + "Supervisor do setor de: ";
+				break;
+			case GERENTE:
+				_cargo = _cargo + "Gerente do setor de: ";
+				break;
 
-		case DIRETOR:
-			_cargo = _cargo + "Diretor do setor de: ";
-			break;
+			case CEO:
+				_cargo = "CEO";
+				break;
+			}
 
-		case CEO:
-			_cargo = "CEO DA EMPRESA FION!";
-			break;
+			switch (departamento) {
+			case TI:
+				_cargo = _cargo + "TI";
+				break;
+			case JURIDICO:
+				_cargo = _cargo + "Juridico";
+				break;
+			case RH:
+				_cargo = _cargo + "RH";
+				break;
+
+			case OPERACOES:
+				_cargo = _cargo + "Operacoes";
+				break;
+
+			default:
+
+				break;
+			}
 		}
 
-		switch (departamento) {
-		case TI:
-			_cargo = _cargo + "TI";
-			break;
-		case JURIDICO:
-			_cargo = _cargo + "Juridico";
-			break;
-		case RH:
-			_cargo = _cargo + "RH";
-			break;
+		else{
+			switch (departamento) {
+			case TI:
+				_cargo = _cargo + "CIO";
+				break;
+			case JURIDICO:
+				_cargo = _cargo + "CLO";
+				break;
+			case RH:
+				_cargo = _cargo + "CHRO";
+				break;
 
-		case OPERACOES:
-			_cargo = _cargo + "Operacoes";
-			break;
-
-		default:
-
-			break;
+			case OPERACOES:
+				_cargo = _cargo + "COO";
+				break;
+			}
 		}
 
 		return _cargo;

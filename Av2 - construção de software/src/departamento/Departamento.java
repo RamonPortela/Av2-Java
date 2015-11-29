@@ -18,7 +18,7 @@ public class Departamento {
 		return this.departamento;
 	}
 
-	private void setOrcamento(double _orcamento){
+	public void setOrcamento(double _orcamento){
 		this.orcamento = _orcamento;
 	}
 

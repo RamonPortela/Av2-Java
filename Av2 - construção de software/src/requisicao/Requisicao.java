@@ -37,4 +37,9 @@ public class Requisicao {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
+
+	@Override
+	public String toString() {
+		return "Requisicao de: "+this.getRequisicao()+ " disparada pelo departamento de: "+ this.getDepartamento()+ " no valor de: "+this.getValor();
+	}
 }

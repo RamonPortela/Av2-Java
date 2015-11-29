@@ -1,5 +1,5 @@
 package enums;
 
 public enum Requisicoes {
-	AQUISICAO, CONTRATACAO, ACORDOLEGAL
+	AQUISICAO, CONTRATACAO, ACORDO_LEGAL
 }
