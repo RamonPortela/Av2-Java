@@ -50,7 +50,7 @@ public class Colaborador {
 				if (requisicao.getRequisicao() == Requisicoes.AQUISICAO	&& requisicao.getValor() <= 5000) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
-					FabricaDeChain.getInstance().criaChain(requisicao, this);;
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -59,6 +59,7 @@ public class Colaborador {
 				if (requisicao.getRequisicao() == Requisicoes.AQUISICAO	&& requisicao.getValor() <= 100000) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -67,6 +68,7 @@ public class Colaborador {
 				if (requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 200000) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -75,6 +77,7 @@ public class Colaborador {
 				if (requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 1000000) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -87,6 +90,7 @@ public class Colaborador {
 				if (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 15000) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -95,6 +99,7 @@ public class Colaborador {
 				if (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 80000) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -103,6 +108,7 @@ public class Colaborador {
 				if (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 400000) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -111,6 +117,7 @@ public class Colaborador {
 				if (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 2000000) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -123,6 +130,7 @@ public class Colaborador {
 				if (requisicao.getRequisicao() == Requisicoes.ACORDOLEGAL && requisicao.getValor() <= 50000) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -131,6 +139,7 @@ public class Colaborador {
 				if (requisicao.getRequisicao() == Requisicoes.ACORDOLEGAL && requisicao.getValor() <= 250000) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -139,6 +148,7 @@ public class Colaborador {
 				if ((requisicao.getRequisicao() == Requisicoes.ACORDOLEGAL && requisicao.getValor() <= 5000000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 500000)) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -151,6 +161,7 @@ public class Colaborador {
 				if ((requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 50000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 25000)) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -159,6 +170,7 @@ public class Colaborador {
 				if ((requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 250000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 100000)) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -167,6 +179,7 @@ public class Colaborador {
 				if ((requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 1000000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 500000)) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
@@ -175,6 +188,7 @@ public class Colaborador {
 				if ((requisicao.getRequisicao() == Requisicoes.AQUISICAO && requisicao.getValor() <= 5000000) || (requisicao.getRequisicao() == Requisicoes.CONTRATACAO && requisicao.getValor() <= 5000000)) {
 					System.out.println("Requisição aceita pelo " + this.toString());
 				} else {
+					FabricaDeChain.getInstance().criaChain(requisicao, this);
 					this.getProximo().aceitaRequisicao(requisicao);
 				}
 				break;
