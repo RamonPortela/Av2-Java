@@ -58,7 +58,7 @@ public class FabricaDeChain {
 		Colaborador diretorJuridico = new Colaborador(Cargos.DIRETOR, Departamentos.JURIDICO);
 		colaboradores.add(diretorJuridico);
 
-		Colaborador ceo = new Colaborador(Cargos.CEO, null);
+		Colaborador ceo = new Colaborador(Cargos.CEO, Departamentos.CEO);
 		colaboradores.add(ceo);
 	}
 
